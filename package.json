@@ -1,0 +1,44 @@
+{
+  "name": "raf-pool",
+  "version": "0.0.0",
+  "description": "requestAnimationFrame pool to avoid busyness on the thread",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snewcomer/raf-pool.git"
+  },
+  "keywords": [
+    "raf",
+    "observer",
+    "lazy",
+    "performance",
+    "requestAnimationFrame"
+  ],
+  "author": "Scott Newcomer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snewcomer/raf-pool/issues"
+  },
+  "homepage": "https://github.com/snewcomer/raf-pool#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.10",
+    "jest": "^23.6.0",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.15.2",
+    "rollup": "^0.67.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^6.0.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.1.6"
+  }
+}
