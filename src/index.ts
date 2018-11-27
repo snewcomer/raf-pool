@@ -1,3 +1,7 @@
+interface IPoolItem {
+  [key: string]: Function;
+}
+
 /**
  * ensure use on requestAnimationFrame, no matter how many components
  * on the page are using this mixin
@@ -6,9 +10,9 @@
  * @public
  */
 export default class RAFAdmin {
-  private pool: Array<object>;
+  private pool: Array<IPoolItem>;
 
-  constructor(...args) {
+  constructor() {
     this.pool = [];
     this.flush();
   }
@@ -17,13 +21,13 @@ export default class RAFAdmin {
    * @method flush
    * @public
    */
-  flush() {
+  public flush(): void {
     window.requestAnimationFrame(() => {
       // assign to a variable to avoid ensure no race conditions happen
       // b/w flushing the pool and interating through the pool
-      let { pool } = this;
+      const { pool } = this;
       this.reset();
-      pool.forEach((item) => {
+      pool.forEach((item: IPoolItem) => {
         item[Object.keys(item)[0]]();
       });
 
@@ -35,7 +39,7 @@ export default class RAFAdmin {
    * @method add
    * @public
    */
-  add(elementId, fn) {
+  public add(elementId: string | number | symbol, fn: Function): Function {
     this.pool.push({ [elementId]: fn });
     return fn;
   }
@@ -44,15 +48,17 @@ export default class RAFAdmin {
    * @method remove
    * @public
    */
-  remove(elementId) {
-    this.pool = this.pool.filter(obj => !obj[elementId]);
+  public remove(elementId: string): void {
+    this.pool = this.pool.filter((obj: IPoolItem) => {
+      return !obj[elementId];
+    });
   }
 
   /**
    * @method reset
    * @public
    */
-  reset() {
+  public reset(): void {
     this.pool = [];
   }
 }

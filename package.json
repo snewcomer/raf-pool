@@ -2,9 +2,29 @@
   "name": "raf-pool",
   "version": "0.0.0",
   "description": "requestAnimationFrame pool to avoid busyness on the thread",
-  "main": "index.js",
+  "main": "dist/raf-pool.umd.js",
+  "module": "dist/raf-pool.es5.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && tsc --module commonjs --outDir dist/es && rollup -c rollup.config.ts",
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/index.test.ts'",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "start": "tsc -w & rollup -c rollup.config.ts -w",
+    "prebuild": "rimraf dist",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   },
   "repository": {
     "type": "git",

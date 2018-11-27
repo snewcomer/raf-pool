@@ -30,7 +30,7 @@ Usage
 ------------------------------------------------------------------------------
 ## API
 
-1. elementId: DOM Node to observe
+1. elementId: DOM Node identifier
 2. callbackFn
     - callback function to perform logic in your own application
     - Note, your callback function should `add` back the method to the raf-pool service.
@@ -40,6 +40,16 @@ import RafPool from 'raf-pool';
 
 const rafPool = new RafPool();
 
+const callback = () => {
+  rafPool.add(element.id, callback);
+};
+
+callback();
+```
+
+### Methods
+
+```js
 // add an element to static administrator
 rafPool.add(element.id, callback);
 
