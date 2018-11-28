@@ -13,11 +13,13 @@ This library is used in [ember-in-viewport](https://github.com/DockYard/ember-in
 
 window.requestAnimationFrame schedules and performs an animation before the next repaint, thus taking the guesswork out of being in sync with the user's browser readiness.  It will perform the callback function 60 times per second, thus making the main thread quite busy.  If you have hundreds of images on the page, it can be very painful on memory when you have hundreds of recurring handles on `requestAnimationFrame`.  This small library can dramatically reduce memory usage as it uses a single requestAnimationFrame.
 
-Good:
-<img src="https://user-images.githubusercontent.com/222011/39496842-4cdf44e4-4d6e-11e8-9197-1dfd501af7e7.png" />
+While observing 20 images on a page:
 
-<img src="https://user-images.githubusercontent.com/222011/39496843-4cf62600-4d6e-11e8-8f86-c47ecb7ae32c.png" />
+### Normal
+<img src="https://i.imgur.com/TLAHxnB.png" />
 
+### With raf-pool
+<img src="https://i.imgur.com/VNK4y90.png" />
 
 Installation
 ------------------------------------------------------------------------------
