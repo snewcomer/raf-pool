@@ -9,7 +9,7 @@ requestAnimationFrame pool to avoid busyness on the thread
 
 Why use an administrator to manage all the elements on my page?
 ------------------------------------------------------------------------------
-This library is used in [ember-in-viewport](https://github.com/DockYard/ember-in-viewport) and [ember-infinity](https://github.com/ember-infinity/ember-infinity).  This library is particularly important for re-using the IntersectionObserver API.
+This library is used in [ember-in-viewport](https://github.com/DockYard/ember-in-viewport) and [ember-infinity](https://github.com/ember-infinity/ember-infinity).
 
 window.requestAnimationFrame schedules and performs an animation before the next repaint, thus taking the guesswork out of being in sync with the user's browser readiness.  It will perform the callback function 60 times per second, thus making the main thread quite busy.  If you have hundreds of images on the page, it can be very painful on memory when you have hundreds of recurring handles on `requestAnimationFrame`.  This small library can dramatically reduce memory usage as it uses a single requestAnimationFrame.
 
