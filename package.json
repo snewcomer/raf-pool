@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "requestAnimationFrame pool to avoid busyness on the thread",
   "main": "dist/raf-pool.umd.js",
-  "module": "dist/raf-pool.es5.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "tsc && tsc --module commonjs --outDir dist/es && rollup -c rollup.config.ts",
@@ -59,6 +58,6 @@
     "tslint-config-prettier": "^1.16.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.0"
   }
 }
