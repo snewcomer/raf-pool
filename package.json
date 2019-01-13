@@ -1,6 +1,6 @@
 {
   "name": "raf-pool",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "requestAnimationFrame pool to avoid busyness on the thread",
   "main": "dist/raf-pool.umd.js",
   "module": "dist/raf-pool.es5.js",
