@@ -3,3 +3,4 @@ tsconfig.json
 rollup.config.ts
 tslint.json
 .travis.yml
+.rpt2_cache
