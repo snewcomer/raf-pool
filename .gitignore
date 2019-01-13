@@ -13,3 +13,4 @@ dist
 npm-debug.log*
 yarn-error.log
 .vscode
+.rpt2_cache
