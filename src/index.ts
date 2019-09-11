@@ -2,6 +2,8 @@ interface IPoolItem {
   [key: string]: Function;
 }
 
+let requestId: number;
+
 /**
  * ensure use on requestAnimationFrame, no matter how many components
  * on the page are using this mixin
@@ -22,7 +24,7 @@ export default class RAFAdmin {
    * @public
    */
   public flush(): void {
-    window.requestAnimationFrame(() => {
+    requestId = window.requestAnimationFrame(() => {
       // assign to a variable to avoid ensure no race conditions happen
       // b/w flushing the pool and interating through the pool
       const { pool } = this;
@@ -60,5 +62,6 @@ export default class RAFAdmin {
    */
   public reset(): void {
     this.pool = [];
+    window.cancelAnimationFrame(requestId);
   }
 }
