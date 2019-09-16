@@ -62,6 +62,9 @@ export default class RAFAdmin {
    */
   public reset(): void {
     this.pool = [];
+  }
+
+  public stop(): void {
     window.cancelAnimationFrame(requestId);
   }
 }
