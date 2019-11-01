@@ -1,0 +1,1 @@
+raf-pool.js is 581 B gzipped.
