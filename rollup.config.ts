@@ -1,5 +1,5 @@
+import typescript from '@rollup/plugin-typescript';
 import camelCase from 'lodash.camelcase';
-import typescript from 'rollup-plugin-typescript2';
 import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 
@@ -14,9 +14,7 @@ export default {
     { file: pkg.module, format: 'es', sourcemap: true }
   ],
   plugins: [
-    typescript({
-      typescript: require('typescript'),
-    }),
+    typescript(),
     // Allow node_modules resolution, so you can use 'external' to control
     // which external modules to include in the bundle
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
